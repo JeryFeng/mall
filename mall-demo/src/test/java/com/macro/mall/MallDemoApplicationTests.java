@@ -22,8 +22,8 @@ public class MallDemoApplicationTests {
 		ObjectMapper mapper = new ObjectMapper();
 		PmsProduct product = new PmsProduct();
 		product.setId(1L);
-		product.setName("小米手机222666");
-		product.setBrandName("小米233");
+		product.setName("afsd");
+		product.setBrandName("fffff");
 		logger.info(mapper.writeValueAsString(product));
 		logger.error(mapper.writeValueAsString(product));
 	}
