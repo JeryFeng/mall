@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    async1().then(() => {
+        console.log('async1 call')
+    })
+
+    sync2().then(()=>{
+        console.log('sync2 call')
+    })
+
+    async function async1() {
+        return Promise.resolve(new Promise(resolve => {
+                console.log('async1 resolve')
+                resolve()
+            })
+        )
+    }
+
+    function sync2() {
+        return Promise.resolve(new Promise(resolve => {
+                console.log('sync2 resolve')
+                resolve()
+            })
+        )
+    }
+
+    new Promise(resolve => {
+        console.log('Promise3 resolve')
+        resolve()
+    }).then(() => {
+        console.log('Promise3 call')
+    })
+
+    console.log('script end')
+</script>
+</body>
+</html>
